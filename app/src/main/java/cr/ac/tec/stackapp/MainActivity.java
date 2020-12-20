@@ -14,12 +14,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import cr.ac.tec.stackapp.stack.Stack;
 
+/***
+ * Clase principal para la creaciónde la aplicación
+ */
 public class MainActivity extends AppCompatActivity {
 
     TextView numView;
     EditText entry;
     Stack stack = new Stack();
 
+    /***
+     * Se inicia la aplicación
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +36,20 @@ public class MainActivity extends AppCompatActivity {
         actNum();
     }
 
+    /***
+     * Agrega un elemento al stack y actualiza el número en pantalla
+     * @param view
+     */
     public void push(View view){
         stack.push(Integer.parseInt(entry.getText().toString()));
         actNum();
+        entry.setText("");
     }
 
+    /***
+     * Elimina un elemento al stack y actualiza el número en pantalla
+     * @param view
+     */
     public void pop(View view){
         if (stack.node != null){
             stack.pop();
@@ -41,10 +57,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /***
+     * Hace peek del stack
+     * @param view
+     */
     public void peek(View view){
         actNum();
     }
 
+    /***
+     * Actualiza el número en pantalla
+     */
     private void actNum(){
         if (stack.node!=null ){
             numView.setText(stack.peek()+"");
