@@ -16,6 +16,7 @@ import cr.ac.tec.stackapp.stack.Stack;
 
 /***
  * Clase principal para la creaciónde la aplicación
+ * @author Pablo Naranjo y Daniel Ureña
  */
 public class MainActivity extends AppCompatActivity {
 
